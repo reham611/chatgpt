@@ -45,7 +45,30 @@ class _ChatbotScreenState extends State<ChatbotScreen> {
       _messages.insert(0, message);
     });
     _textController.clear();
-    //_getResponse(message.text);
+    _getResponse(message.text);
+  }
+
+  void _getResponse(String message) async {
+    Map<String, String> headers = {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer $_openAIKey',
+    };
+    Map<String, dynamic> body = {
+      'model': 'text-davinci-002',
+      'prompt': message,
+      'max_tokens': 256,
+    };
+    http.Response response =
+        await http.post(_openAIUrl, headers: headers, body: json.encode(body));
+    Map<String, dynamic> responseJson = json.decode(response.body);
+    print(responseJson);
+    ChatMessage chatMessage = ChatMessage(
+      text: responseJson['choices'][0]['text'],
+      sender: 'bot',
+    );
+    setState(() {
+      _messages.insert(0, chatMessage);
+    });
   }
 
   @override
