@@ -116,7 +116,7 @@ class _ChatbotScreenState extends State<ChatbotScreen> {
             Container(
               margin: EdgeInsets.symmetric(horizontal: 4.0),
               child: IconButton(
-                  icon: Icon(Icons.send), onPressed: () => _sendMessage()),
+                  icon: Icon(Icons.ads_click), onPressed: () => _sendMessage()),
             ),
           ],
         ),
