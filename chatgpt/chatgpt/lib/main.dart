@@ -110,7 +110,7 @@ class _ChatbotScreenState extends State<ChatbotScreen> {
               child: TextField(
                 controller: _textController,
                 decoration:
-                    InputDecoration.collapsed(hintText: 'Send a message'),
+                    InputDecoration.collapsed(hintText: ' Send a message '),
               ),
             ),
             Container(
