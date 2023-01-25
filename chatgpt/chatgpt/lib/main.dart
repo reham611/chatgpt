@@ -113,6 +113,11 @@ class _ChatbotScreenState extends State<ChatbotScreen> {
                     InputDecoration.collapsed(hintText: 'Send a message'),
               ),
             ),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 4.0),
+              child: IconButton(
+                  icon: Icon(Icons.send), onPressed: () => _sendMessage()),
+            ),
           ],
         ),
       ),
