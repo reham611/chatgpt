@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Chatbot',
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.purple,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: ChatbotScreen(),
@@ -30,7 +30,7 @@ class _ChatbotScreenState extends State<ChatbotScreen> {
   final List<ChatMessage> _messages = [];
   final Uri _openAIUrl = Uri.parse('https://api.openai.com/v1/completions');
   final String _openAIKey =
-      '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';
+      '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';
 
   void _sendMessage() {
     if (_textController.text.trim().isEmpty) {
